@@ -3,7 +3,6 @@ package main
 import (
         "log"
         "net"
-         "os"
 )
 
 func main() {
@@ -25,6 +24,5 @@ func main() {
 
 func handleConnection(c net.Conn) {
         log.Println("A client has connected", c.RemoteAddr())
-         c.Write([]byte(os.Getenv("hostname") ))
-        // c.Write([]byte("hkhkhkhh" ))
+         c.Write([]byte("Hello from server"))
 }
